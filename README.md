@@ -7,7 +7,7 @@ The A(MC) Team submission to AI for Good: Lightning-Fast Modulation Classificati
 This repo is for th submission to **ITU-ML5G-PS-007: Lightning-Fast Modulation Classification with Hardware-Efficient Neural Networks**.
 The goal of the competition was to created the fastest* and most efficient* deep learning architecture that could achieve a minimum of 56% classificaiton accuracy on the  DeepSig RadioML 2018 dataset.
 
-In this competition, we highlight pruning methods for network compression. We use Iterative Magnitude Pruning (IMP) and develop a variant called Feedback Magnitude Pruning (FMP). FMP, analgous to a decaying learning rate scheduler, reduces the pruning parameter when the network is unable to achieve a specified criterion (i.e. accuracy). We demonstrate  iterative pruning methods are very effective for network compression, and how adding feedback to the algorithm enables much greater compression and an improved normalized inference. Our final compression ratios and normalized inference costs are in the table below.
+In this competition, we highlight pruning methods for network compression. We use Iterative Magnitude Pruning (IMP) with an accuracy threshold and develop a variant called Feedback Magnitude Pruning (FMP). FMP, analgous to a decaying learning rate scheduler, reduces the pruning parameter when the network is unable to achieve a specified criterion (i.e. accuracy). We demonstrate  iterative pruning methods are very effective for network compression, and how adding feedback to the algorithm enables much greater compression and an improved normalized inference. Our final compression ratios and normalized inference costs are in the table below.
 
 || Baseline | Iterative Magnitude Pruning  | Feedback Magnitude Pruning |
 |-|-------------| ------------- | ------------- |
@@ -19,21 +19,36 @@ In this competition, we highlight pruning methods for network compression. We us
 
 
 ## Feedback Magnitude Pruning (FMP) ##
-In this work we propose an enhanced version of Iterative Magnitude Pruning (IMP) that leverages feedback to adjust the pruning parameters. The algorithm for FMP is as follows:
+In this work we propose an enhanced version of Iterative Magnitude Pruning (IMP) that leverages feedback to adjust the pruning parameters. The algorithm for IMP with an accuracy criterion is as follows:
 
+![](https://github.com/ITU-AI-ML-in-5G-Challenge/ITU-ML5G-PS-007-The-AMC-Team/blob/main/IMP_algorithm.JPG)
 
+Feedback Magnitude Pruning requires the specificaiton of parameters:
+- *p_methods*: List of pruning methods to be aplied serially 
+- *p*: Initial pruning parameter
+- *n*: Determines the rate of decay for *p*
 
+The algorithm for FMP with an accuracy criterion is as follows:
 
-## Run the code
+![](https://github.com/ITU-AI-ML-in-5G-Challenge/ITU-ML5G-PS-007-The-AMC-Team/blob/main/FMP_algorithm.JPG)
+
+In this work we used:
+- *p_methods*: Unstructured pruning 
+- *p*: 0.20 (20% per iteration)
+- *n*: 2
+
+**Please note there is a threshold to *p* in order to limit runtime**
+
+## Run the code ##
 To run FMP, with our best (to date) results, please run the following:
 ```
 python3 feedback_magnitude_pruning.py
 ```
 The parameters (bits, conv filters, dense nodes, sparsity and sparsity decay parameters, are in the top of the .py file.
 
-Please refer to our report, the .pdf in the repo, for more details!
 
+## Report ##
+Please refer to our report in the repo, for more details!
 
 ### Notes
 - The code used in this repo stems from the provided repo: https://github.com/Xilinx/brevitas-radioml-challenge-21
-- Please find ITU_form.txt to see further details regarding performance, instructions to run the code, etc.
