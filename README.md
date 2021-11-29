@@ -12,7 +12,7 @@ In this competition, we highlight pruning methods for network compression. We us
 || Baseline | Iterative Magnitude Pruning  | Feedback Magnitude Pruning |
 |-|-------------| ------------- | ------------- |
 |Compression Ratio| 1  | 9.3  | 813  |
-|Inference Cost| 1  | 0.0424  | 0.0268  |
+|Inference Cost| 1  | 0.0424  | 0.0419  |
 
 
 *Speed and efficiency metrics are defined at: https://challenge.aiforgood.itu.int/match/matchitem/34
