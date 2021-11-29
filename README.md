@@ -10,9 +10,9 @@ The goal of the competition was to created the fastest* and most efficient* deep
 In this competition, we highlight pruning methods for network compression. We use Iterative Magnitude Pruning (IMP) with an accuracy threshold and develop a variant called Feedback Magnitude Pruning (FMP). FMP, analgous to a decaying learning rate scheduler, reduces the pruning parameter when the network is unable to achieve a specified criterion (i.e. accuracy). We demonstrate  iterative pruning methods are very effective for network compression, and how adding feedback to the algorithm enables much greater compression and an improved normalized inference. Our final compression ratios and normalized inference costs are in the table below.
 
 || Baseline | Iterative Magnitude Pruning  | Feedback Magnitude Pruning |
-|-|-------------| ------------- | ------------- |
-|Compression Ratio| 1  | 9.3  | 813  |
-|Inference Cost| 1  | 0.0424  | 0.0419  |
+|-|-------------| ------------- | ------------- | 
+|Compression Ratio| 1  | 9.3  | 813  | 
+|Inference Cost| 1  | 0.0424  | 0.0419 |
 
 
 *Speed and efficiency metrics are defined at: https://challenge.aiforgood.itu.int/match/matchitem/34
