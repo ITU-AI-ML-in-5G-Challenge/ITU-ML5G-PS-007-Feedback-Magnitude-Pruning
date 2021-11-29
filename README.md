@@ -16,7 +16,7 @@ In this competition, we highlighted pruning methods for network compression. We 
 *Speed and efficiency metrics are defined at: https://challenge.aiforgood.itu.int/match/matchitem/34
 
 ## Report & Slides ##
-Please refer to our report (FMP_report.pdf) as well as our slides (FMP_slides.pdf) in the repo, for more details!
+Please refer to our report (Feedback_Magnitude_Pruning_11_29_21.pdf) as well as our slides (FMP_slides.pdf) in the repo, for more details!
 
 ## Feedback Magnitude Pruning (FMP) ##
 In this work we propose an enhanced version of Iterative Magnitude Pruning (IMP) that leverages feedback to adjust the pruning parameters. The algorithm for IMP with an accuracy criterion is as follows:
