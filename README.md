@@ -40,7 +40,7 @@ In this work we used:
 **Please note there is a threshold to *p* in order to limit runtime**
 
 ## Run the code ##
-To run FMP, with our best (to date) results, please run the following:
+To run FMP, with our best (to date) results, please run the following (**be sure to input the path to where the data is stored**)::
 ```
 python3 feedback_magnitude_pruning.py
 ```
